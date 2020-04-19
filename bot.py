@@ -17,6 +17,15 @@ async def on_ready():
 async def say_hello(ctx):
     await ctx.send(f"Hi {ctx.author.display_name}")
 
+@bot.command(name="print_grid", help="prints grid")
+async def print_grid(grid, ctx):
+    grid = []
+    for x in range(0, 6):
+        grid.append(["X"] * 6)
+        for row in grid:
+            print(" ".join(row))
+    await ctx.send("Sink Your Enemy Ships Before They Sink Yours!")
+    await ctx.send(print_grid(grid))
+
+
 bot.run(TOKEN)
-
-
