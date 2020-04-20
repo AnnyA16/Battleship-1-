@@ -21,14 +21,13 @@ async def say_hello(ctx):
 
 @bot.command(name="random_row", help="Selects a random row")
 async def random_row(grid):
-    await ctx.send(random.randint(0,5))
+    await ctx.send(random.randint(1,7))
 
 @bot.command(name="random_col", help="Selects a random column")
 async def random_col(board):
-    await ctx.send(random.randint(0,5))
+    await ctx.send(random.randint(1,7))
 
-ship_row = random_row(grid)
-print(ship_row)
-ship_col = random_col(grid)
-print(ship_col)
+battle_row = random_row(grid)
+battle_col = random_col(grid)
+
 bot.run(TOKEN)
