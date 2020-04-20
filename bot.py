@@ -19,16 +19,17 @@ async def say_hello(ctx):
 
 grid = []
 
-for x in range(0,5):
-    grid.append(["X"] * 5)
+for y in range(1, 7):
+    grid.append(["X"] * 6)
 
 @bot.command(name="print_grid", help="prints out grid")
 async def print_grid(grid, ctx):
     for row in grid:
         print(" ".join(row))
 
-await ctx.send("Sink Your Enemy Ships Before They Sink Yours!")
+await ctx.send("Welcome to Battleship! Sink Your Enemy Ships Before They Sink Yours!")
 await ctx.send(print_grid(grid))
+
 
 
 bot.run(TOKEN)
